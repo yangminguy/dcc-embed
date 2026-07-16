@@ -23,9 +23,9 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--black)}
-  body{color:var(--cream);font-family:var(--f-body);font-size:14px;line-height:1.55;
+  body{color:var(--cream);font-family:var(--f-body);font-size:16px;line-height:1.55;
     -webkit-font-smoothing:antialiased;padding:26px clamp(18px,3vw,44px);max-width:1180px;margin:0 auto}
-  .mono{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:10.5px;color:var(--cream-64)}
+  .mono{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--cream-64)}
   .disp{font-family:var(--f-disp);text-transform:uppercase;font-weight:600;letter-spacing:-.03em;line-height:.9}
   .tnum{font-variant-numeric:tabular-nums}
 
@@ -64,8 +64,8 @@
   .sh{display:flex;justify-content:space-between;align-items:baseline;
     border-right:var(--hair) solid var(--cream-16);border-bottom:var(--hair) solid var(--cream-16);
     padding:13px 18px;background:var(--ink-850)}
-  .sh .t{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--cream)}
-  .sh .n{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;color:var(--cream-40)}
+  .sh .t{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:13.5px;color:var(--cream)}
+  .sh .n{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em;color:var(--cream-40)}
   .body{border-right:var(--hair) solid var(--cream-16);border-bottom:var(--hair) solid var(--cream-16);padding:16px 18px}
   .cols{display:grid;grid-template-columns:1fr 1fr}
   .cols > section{border-left:0}
@@ -76,7 +76,7 @@
   .prj{border:var(--hair) solid var(--cream-16);margin-bottom:12px}
   .prj:last-child{margin-bottom:0}
   .prjh{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:var(--hair) solid var(--cream-16);background:var(--cream-08)}
-  .prjh .pn{font-weight:600;font-size:13.5px;flex:1}
+  .prjh .pn{font-weight:600;font-size:16.5px;flex:1}
   .prjh .pc{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;color:var(--cream-64)}
   .prjbar{height:4px;background:var(--cream-08);width:70px;position:relative}
   .prjbar i{position:absolute;left:0;top:0;height:100%;background:var(--orange)}
@@ -85,7 +85,7 @@
   .box{width:15px;height:15px;border:var(--hair) solid var(--cream-40);flex:none;position:relative}
   .box.done{background:var(--cream);border-color:var(--cream)}
   .box.done::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--black);border-width:0 2px 2px 0;transform:rotate(45deg)}
-  .task .tn{flex:1;font-size:13px}
+  .task .tn{flex:1;font-size:15.5px}
   .task.d .tn{color:var(--cream-40);text-decoration:line-through}
   .task .when{font-family:var(--f-mono);font-size:9px;letter-spacing:.06em;color:var(--cream-40)}
   .pri{font-family:var(--f-mono);font-size:9px;letter-spacing:.08em;padding:2px 6px;border:var(--hair) solid var(--cream-16);color:var(--cream-64)}
@@ -100,26 +100,26 @@
   /* reminders */
   .rem{display:flex;align-items:center;gap:11px;padding:8px 0;border-bottom:var(--hair) solid var(--cream-08)}
   .rem:last-child{border-bottom:0}
-  .rem .rn{flex:1;font-size:13px}
+  .rem .rn{flex:1;font-size:15.5px}
   .rem.d .rn{color:var(--cream-40);text-decoration:line-through}
   .rem .rd{font-family:var(--f-mono);font-size:9px;letter-spacing:.06em;color:var(--cream-40)}
 
   /* retro */
   .retro-line{margin-bottom:12px}
   .retro-line .rl{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-40);margin-bottom:4px}
-  .retro-line .rv{font-size:13px;color:var(--cream-90);line-height:1.5}
+  .retro-line .rv{font-size:15.5px;color:var(--cream-90);line-height:1.5}
   .moods{display:flex;gap:20px;margin-bottom:12px}
   .moods .m b{font-family:var(--f-disp);font-weight:600;font-size:18px}
   .chk{border:var(--hair) solid var(--cream-16);padding:11px 12px;margin-top:8px}
   .chk .ct{display:flex;gap:8px;align-items:center;margin-bottom:7px}
   .chk .badge{font-family:var(--f-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:var(--cream);color:var(--black);padding:3px 7px}
   .chk .cs{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;color:var(--cream-64)}
-  .chk .cm{font-size:12px;color:var(--cream-64);line-height:1.5}
+  .chk .cm{font-size:14.5px;color:var(--cream-64);line-height:1.5}
 
   /* habits */
   .habit{display:grid;grid-template-columns:66px repeat(7,1fr) 46px;gap:4px;align-items:center}
   .habit .hd{font-family:var(--f-mono);font-size:9px;letter-spacing:.05em;color:var(--cream-40);text-align:center}
-  .habit .hn{font-size:11px;color:var(--cream-64)}
+  .habit .hn{font-size:13px;color:var(--cream-64)}
   .habit .cell{aspect-ratio:1;border:var(--hair) solid var(--cream-16);max-height:22px}
   .habit .cell.on{background:var(--cream);border-color:var(--cream)}
   .habit .stk{font-family:var(--f-mono);font-size:10px;color:var(--cream-64);text-align:right}
@@ -138,19 +138,126 @@
 <!-- ▼▼▼ 로컬 생성기(render_dashboard.py)가 이 블록만 매 실행 시 교체 ▼▼▼ -->
 <script>
 const DATA = {
- "generatedAt": "2026-07-16 16:39 KST",
+ "generatedAt": "2026-07-16 16:55 KST",
  "dateLabel": "2026 / 07 / 16 · THU",
  "level": {
-  "xp": 0
+  "xp": 29
  },
  "focus": {
   "min": 175,
   "goalMin": 240
  },
  "achieve": null,
- "activeProjects": [],
+ "activeProjects": [
+  {
+   "name": "비즈니스 OS",
+   "done": 5,
+   "total": 5,
+   "tasks": [
+    {
+     "name": "에이전트 OS 기획",
+     "done": true,
+     "pri": "",
+     "when": ""
+    },
+    {
+     "name": "에이전트 os mvp 구현",
+     "done": true,
+     "pri": "",
+     "when": ""
+    },
+    {
+     "name": "비지니스 OS CTO + ACR(agent control room)",
+     "done": true,
+     "pri": "",
+     "when": ""
+    },
+    {
+     "name": "실제 테스트하면서 필요한 것들",
+     "done": true,
+     "pri": "",
+     "when": ""
+    },
+    {
+     "name": "QA 기능 개발",
+     "done": true,
+     "pri": "",
+     "when": ""
+    }
+   ]
+  },
+  {
+   "name": "마케팅 자동화 사업화",
+   "done": 3,
+   "total": 3,
+   "tasks": [
+    {
+     "name": "비즈니스 인터뷰 추적",
+     "done": true,
+     "pri": "",
+     "when": ""
+    },
+    {
+     "name": "시장성 검토",
+     "done": true,
+     "pri": "",
+     "when": ""
+    },
+    {
+     "name": "경쟁사 분석 및 벤치 마킹",
+     "done": true,
+     "pri": "",
+     "when": ""
+    }
+   ]
+  },
+  {
+   "name": "영상 자동화",
+   "done": 2,
+   "total": 2,
+   "tasks": [
+    {
+     "name": "영상 숏츠 제작",
+     "done": true,
+     "pri": "",
+     "when": ""
+    },
+    {
+     "name": "영상 편집기 업그레이드",
+     "done": true,
+     "pri": "",
+     "when": ""
+    }
+   ]
+  },
+  {
+   "name": "세컨브레인",
+   "done": 1,
+   "total": 1,
+   "tasks": [
+    {
+     "name": "세컨 브레인 활용법 - 비즈니스 pt 트레이너",
+     "done": true,
+     "pri": "",
+     "when": ""
+    }
+   ]
+  },
+  {
+   "name": "TODO관리",
+   "done": 0,
+   "total": 0,
+   "tasks": []
+  },
+  {
+   "name": "마케팅 공부 + 컨설팅",
+   "done": 0,
+   "total": 0,
+   "tasks": []
+  }
+ ],
  "taskStat": {
-  "done": 0,
+  "done": 11,
   "doing": 0,
   "todo": 0
  },
@@ -161,6 +268,13 @@ const DATA = {
   "morningMood": null,
   "eveningMood": null,
   "checks": [
+   {
+    "state": "막힘",
+    "mood": 4,
+    "focus": 2,
+    "memo": "영상 업로드가 잘 되서 기분은 좋다. 영상 편집 자동화 계획안도 올려서 개발 중에 있고 지금은 투두 점검을 개발하는 중이다. 몰입이 살짝 깨진 감이 있기는 한데 그래도 잘 하고 있다 .",
+    "time": "16:49"
+   },
    {
     "state": "순항중",
     "mood": 5,
@@ -300,14 +414,14 @@ if(D.activeProjects.length){
   $('#projects').innerHTML=D.activeProjects.map(p=>`
     <div class="prj">
       <div class="prjh"><span class="pn">${p.name}</span>
-        <span class="prjbar"><i style="width:${Math.round(p.done/p.total*100)}%"></i></span>
+        <span class="prjbar"><i style="width:${p.total?Math.round(p.done/p.total*100):0}%"></i></span>
         <span class="pc">${p.done}/${p.total}</span></div>
-      ${p.tasks.map(t=>`<div class="task ${t.done?'d':''}">
+      ${p.tasks.length? p.tasks.map(t=>`<div class="task ${t.done?'d':''}">
         <span class="box ${t.done?'done':''}"></span>
         <span class="tn">${t.name}</span>
         ${t.when?`<span class="when">${t.when}</span>`:''}
         ${t.pri?`<span class="pri ${t.pri==='1순위'?'p1':''}">${t.pri}</span>`:''}
-      </div>`).join('')}
+      </div>`).join('') : '<div class="task"><span class="tn" style="color:var(--cream-40)">등록된 태스크 없음</span></div>'}
     </div>`).join('');
 }else{
   $('#prjn').textContent="0 ACTIVE";
