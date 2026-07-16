@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAILY COMMAND CENTER</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&family=Cutive+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>
+  :root{
+    --black:#000000; --ink-850:#0A0A0A; --ink-800:#121210;
+    --cream:#DCDBCE;
+    --cream-90:rgba(220,219,206,.90); --cream-64:rgba(220,219,206,.64);
+    --cream-40:rgba(220,219,206,.40); --cream-16:rgba(220,219,206,.16);
+    --cream-08:rgba(220,219,206,.08);
+    --orange:#E5511F; --orange-bright:#F26A33;
+    --f-disp:'Work Sans','Pretendard Variable',sans-serif;
+    --f-mono:'Cutive Mono',ui-monospace,monospace;
+    --f-body:'Pretendard Variable','Work Sans',sans-serif;
+    --hair:1.5px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--black)}
+  body{color:var(--cream);font-family:var(--f-body);font-size:14px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;padding:26px clamp(18px,3vw,44px);max-width:1180px;margin:0 auto}
+  .mono{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:10.5px;color:var(--cream-64)}
+  .disp{font-family:var(--f-disp);text-transform:uppercase;font-weight:600;letter-spacing:-.03em;line-height:.9}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  header{display:flex;justify-content:space-between;align-items:flex-start;
+    padding-bottom:16px;border-bottom:var(--hair) solid var(--cream);margin-bottom:0}
+  .eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+  .sq{width:9px;height:9px;background:var(--orange);border-radius:2px;flex:none}
+  h1.disp{font-size:clamp(28px,4.2vw,48px);margin:0;color:var(--cream)}
+  .subko{font-family:var(--f-body);font-size:13px;color:var(--cream-64);margin-top:10px}
+  .hr-right{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex:none;padding-left:20px}
+  .mark{width:52px;height:52px;color:var(--cream)}
+
+  /* ---- hero: level + focus + 달성률 ---- */
+  .hero{display:grid;grid-template-columns:1.7fr 1fr 1fr;border-left:var(--hair) solid var(--cream-16)}
+  .hcell{border-right:var(--hair) solid var(--cream-16);border-bottom:var(--hair) solid var(--cream-16);padding:18px 20px}
+  .hcell .lbl{display:flex;justify-content:space-between;align-items:baseline}
+  .lvrow{display:flex;align-items:baseline;gap:14px;margin-top:12px}
+  .lvbig{font-family:var(--f-disp);font-weight:600;letter-spacing:-.02em;font-size:52px;line-height:.85}
+  .lvbig small{font-size:20px;color:var(--cream-40)}
+  .xpnow{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--cream-64)}
+  .lvbar{height:8px;background:var(--cream-08);margin-top:16px;position:relative;border:var(--hair) solid var(--cream-16)}
+  .lvbar i{position:absolute;left:0;top:0;height:100%;background:var(--orange)}
+  .lvnext{font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--cream-40);margin-top:9px;display:flex;justify-content:space-between}
+  .lvnext b{color:var(--orange-bright);font-family:var(--f-disp);font-weight:600;letter-spacing:0}
+  .big{font-family:var(--f-disp);font-weight:600;letter-spacing:-.02em;font-size:38px;line-height:1;margin-top:14px}
+  .big small{font-size:15px;color:var(--cream-40);font-weight:500}
+  .sub{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-40);margin-top:8px}
+  .track{height:8px;background:var(--cream-08);margin-top:14px;position:relative;border:var(--hair) solid var(--cream-16)}
+  .track i{position:absolute;left:0;top:0;height:100%;background:var(--cream)}
+  .track i.o{background:var(--orange)}
+  .numnull{font-family:var(--f-disp);font-weight:600;font-size:38px;color:var(--cream-16);margin-top:14px}
+  .none{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-40);margin-top:12px;display:block}
+
+  /* ---- sections ---- */
+  section{border-left:var(--hair) solid var(--cream-16)}
+  .sh{display:flex;justify-content:space-between;align-items:baseline;
+    border-right:var(--hair) solid var(--cream-16);border-bottom:var(--hair) solid var(--cream-16);
+    padding:13px 18px;background:var(--ink-850)}
+  .sh .t{font-family:var(--f-mono);text-transform:uppercase;letter-spacing:.14em;font-size:11px;color:var(--cream)}
+  .sh .n{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;color:var(--cream-40)}
+  .body{border-right:var(--hair) solid var(--cream-16);border-bottom:var(--hair) solid var(--cream-16);padding:16px 18px}
+  .cols{display:grid;grid-template-columns:1fr 1fr}
+  .cols > section{border-left:0}
+  @media(max-width:860px){.hero{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}}
+  @media(max-width:560px){.hero{grid-template-columns:1fr}}
+
+  /* project block */
+  .prj{border:var(--hair) solid var(--cream-16);margin-bottom:12px}
+  .prj:last-child{margin-bottom:0}
+  .prjh{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:var(--hair) solid var(--cream-16);background:var(--cream-08)}
+  .prjh .pn{font-weight:600;font-size:13.5px;flex:1}
+  .prjh .pc{font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;color:var(--cream-64)}
+  .prjbar{height:4px;background:var(--cream-08);width:70px;position:relative}
+  .prjbar i{position:absolute;left:0;top:0;height:100%;background:var(--orange)}
+  .task{display:flex;align-items:center;gap:11px;padding:8px 13px;border-bottom:var(--hair) solid var(--cream-08)}
+  .task:last-child{border-bottom:0}
+  .box{width:15px;height:15px;border:var(--hair) solid var(--cream-40);flex:none;position:relative}
+  .box.done{background:var(--cream);border-color:var(--cream)}
+  .box.done::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid var(--black);border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .task .tn{flex:1;font-size:13px}
+  .task.d .tn{color:var(--cream-40);text-decoration:line-through}
+  .task .when{font-family:var(--f-mono);font-size:9px;letter-spacing:.06em;color:var(--cream-40)}
+  .pri{font-family:var(--f-mono);font-size:9px;letter-spacing:.08em;padding:2px 6px;border:var(--hair) solid var(--cream-16);color:var(--cream-64)}
+  .pri.p1{border-color:var(--orange);color:var(--orange-bright)}
+
+  .stat{display:flex;height:12px;border:var(--hair) solid var(--cream-16);margin-top:4px}
+  .stat i.done{background:var(--cream)}.stat i.doing{background:var(--orange)}.stat i.todo{background:var(--cream-16)}
+  .statleg{display:flex;gap:16px;font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--cream-64);margin-top:8px}
+  .statleg b{font-family:var(--f-disp);font-weight:600;letter-spacing:0;color:var(--cream)}
+  .statleg .sw{display:inline-block;width:8px;height:8px;margin-right:6px;vertical-align:middle}
+
+  /* reminders */
+  .rem{display:flex;align-items:center;gap:11px;padding:8px 0;border-bottom:var(--hair) solid var(--cream-08)}
+  .rem:last-child{border-bottom:0}
+  .rem .rn{flex:1;font-size:13px}
+  .rem.d .rn{color:var(--cream-40);text-decoration:line-through}
+  .rem .rd{font-family:var(--f-mono);font-size:9px;letter-spacing:.06em;color:var(--cream-40)}
+
+  /* retro */
+  .retro-line{margin-bottom:12px}
+  .retro-line .rl{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-40);margin-bottom:4px}
+  .retro-line .rv{font-size:13px;color:var(--cream-90);line-height:1.5}
+  .moods{display:flex;gap:20px;margin-bottom:12px}
+  .moods .m b{font-family:var(--f-disp);font-weight:600;font-size:18px}
+  .chk{border:var(--hair) solid var(--cream-16);padding:11px 12px;margin-top:8px}
+  .chk .ct{display:flex;gap:8px;align-items:center;margin-bottom:7px}
+  .chk .badge{font-family:var(--f-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:var(--cream);color:var(--black);padding:3px 7px}
+  .chk .cs{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.06em;color:var(--cream-64)}
+  .chk .cm{font-size:12px;color:var(--cream-64);line-height:1.5}
+
+  /* habits */
+  .habit{display:grid;grid-template-columns:66px repeat(7,1fr) 46px;gap:4px;align-items:center}
+  .habit .hd{font-family:var(--f-mono);font-size:9px;letter-spacing:.05em;color:var(--cream-40);text-align:center}
+  .habit .hn{font-size:11px;color:var(--cream-64)}
+  .habit .cell{aspect-ratio:1;border:var(--hair) solid var(--cream-16);max-height:22px}
+  .habit .cell.on{background:var(--cream);border-color:var(--cream)}
+  .habit .stk{font-family:var(--f-mono);font-size:10px;color:var(--cream-64);text-align:right}
+  .habit .stk.hot{color:var(--orange-bright)}
+
+  .empty{font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--cream-40);
+    border:var(--hair) dashed var(--cream-16);padding:12px 13px;line-height:1.7}
+
+  footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:16px}
+  footer .mono{color:var(--cream-40)}
+  .srcs{display:flex;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<!-- ▼▼▼ 로컬 생성기(render_dashboard.py)가 이 블록만 매 실행 시 교체 ▼▼▼ -->
+<script>
+const DATA = {
+ "generatedAt": "2026-07-16 16:19 KST",
+ "dateLabel": "2026 / 07 / 16 · THU",
+ "level": {
+  "xp": 0
+ },
+ "focus": {
+  "min": 175,
+  "goalMin": 240
+ },
+ "achieve": null,
+ "activeProjects": [],
+ "taskStat": {
+  "done": 0,
+  "doing": 0,
+  "todo": 0
+ },
+ "reminders": [],
+ "retro": {
+  "oneLine": null,
+  "improve": null,
+  "morningMood": null,
+  "eveningMood": null,
+  "checks": [
+   {
+    "state": "순항중",
+    "mood": 5,
+    "focus": 4,
+    "memo": "지금 나는 영상 편집 자동화를 개선하려고 노력하고 있고 영상 을 실제로 만들고 있어 이제 업로드 준비도 해야지",
+    "time": "15:07"
+   }
+  ]
+ },
+ "habits": {
+  "names": [
+   "성경",
+   "독서",
+   "글쓰기",
+   "운동",
+   "아침밥",
+   "점심밥",
+   "저녁밥",
+   "디톡스"
+  ],
+  "week": [],
+  "streaks": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ }
+};
+</script>
+<!-- ▲▲▲ -->
+
+<header>
+  <div>
+    <div class="eyebrow"><span class="sq"></span><span class="mono" style="color:var(--cream)">SECOND-BRAIN OS · COMMAND CENTER</span></div>
+    <h1 class="disp">DAILY<br>COMMAND CENTER</h1>
+    <div class="subko" id="subko">데일리 커맨드 센터 — 노션·미리알림 동기화</div>
+  </div>
+  <div class="hr-right">
+    <svg class="mark" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="butt">
+      <line x1="100" y1="5" x2="100" y2="195"/><line x1="5" y1="100" x2="195" y2="100"/>
+      <line x1="33.2" y1="33.2" x2="166.8" y2="166.8"/><line x1="166.8" y1="33.2" x2="33.2" y2="166.8"/>
+    </svg>
+    <div class="mono tnum" id="datelab">2026 / 07 / 16</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hcell">
+    <div class="lbl"><span class="mono" style="color:var(--cream)">레벨</span><span class="mono">LEVEL</span></div>
+    <div class="lvrow"><span class="lvbig tnum" id="lvbig">LV 1</span><span class="xpnow tnum" id="xpnow">0 XP</span></div>
+    <div class="lvbar"><i id="lvbar"></i></div>
+    <div class="lvnext"><span id="lvnextl">다음 레벨까지</span><b class="tnum" id="lvnextr">—</b></div>
+  </div>
+  <div class="hcell">
+    <div class="lbl"><span class="mono" style="color:var(--cream)">오늘 몰입</span><span class="mono">FOCUS</span></div>
+    <div class="big tnum" id="focus">—</div>
+    <div class="sub" id="focussub"></div>
+    <div class="track"><i class="o" id="focusbar"></i></div>
+  </div>
+  <div class="hcell">
+    <div class="lbl"><span class="mono" style="color:var(--cream)">달성률</span><span class="mono">DONE</span></div>
+    <div id="achieve"></div>
+  </div>
+</div>
+
+<section>
+  <div class="sh"><span class="t">활성 프로젝트 & 태스크</span><span class="n" id="prjn">ACTIVE</span></div>
+  <div class="body" id="projects"></div>
+</section>
+
+<section>
+  <div class="sh"><span class="t">태스크 현황 · 활성 프로젝트</span><span class="n" id="statn"></span></div>
+  <div class="body" id="status"></div>
+</section>
+
+<div class="cols">
+  <section>
+    <div class="sh"><span class="t">미리알림</span><span class="n">REMINDERS</span></div>
+    <div class="body" id="reminders"></div>
+  </section>
+  <section>
+    <div class="sh"><span class="t">하루 회고</span><span class="n">DAILY RETRO</span></div>
+    <div class="body" id="retro"></div>
+  </section>
+</div>
+
+<section>
+  <div class="sh"><span class="t">습관 트래커 · 이번 주</span><span class="n">HABITS</span></div>
+  <div class="body" id="habit"></div>
+</section>
+
+<footer>
+  <div class="srcs">
+    <span class="mono">NOTION</span><span class="mono">REMINDERS</span><span class="mono">SCREEN&nbsp;TIME</span>
+    <span class="mono">HABITS</span><span class="mono">XP&nbsp;LEDGER</span>
+  </div>
+  <div class="mono" id="foot">LOCAL → HTML · UPDATED —</div>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s),D=DATA;
+const hm=m=>{m=Math.round(m);return Math.floor(m/60)+"h "+(m%60)+"m";};
+
+// 레벨 계산: Lv1 0-99, Lv2 100-249, 이후 +150/레벨
+function levelStart(l){ return l<=1?0:100+(l-2)*150; }
+function levelInfo(xp){ let l=1; while(xp>=levelStart(l+1)) l++;
+  const s=levelStart(l), e=levelStart(l+1); return {l,into:xp-s,span:e-s,remain:e-xp}; }
+
+$('#datelab').textContent=D.dateLabel;
+$('#foot').textContent="LOCAL → HTML · UPDATED "+D.generatedAt;
+
+const li=levelInfo(D.level.xp||0);
+$('#lvbig').textContent="LV "+li.l;
+$('#xpnow').textContent=(D.level.xp||0)+" XP";
+$('#lvbar').style.width=Math.round(li.into/li.span*100)+"%";
+$('#lvnextr').textContent="+"+li.remain+" XP · 몰입 "+(li.remain/10).toFixed(1)+"h";
+
+// 몰입
+$('#focus').innerHTML=hm(D.focus.min);
+$('#focussub').textContent="목표 "+hm(D.focus.goalMin)+" · 스크린타임 실측";
+$('#focusbar').style.width=Math.min(100,Math.round(D.focus.min/D.focus.goalMin*100))+"%";
+
+// 달성률
+$('#achieve').innerHTML = D.achieve==null
+  ? '<div class="numnull tnum">—</div><span class="none">2시간마다 채워짐 · 회고가 집계</span>'
+  : `<div class="big tnum">${D.achieve}<small>%</small></div><div class="sub">노션 완료 / 오늘 예정</div>
+     <div class="track"><i class="o" style="width:${D.achieve}%"></i></div>`;
+
+// 활성 프로젝트
+if(D.activeProjects.length){
+  $('#prjn').textContent=D.activeProjects.length+" ACTIVE";
+  $('#projects').innerHTML=D.activeProjects.map(p=>`
+    <div class="prj">
+      <div class="prjh"><span class="pn">${p.name}</span>
+        <span class="prjbar"><i style="width:${Math.round(p.done/p.total*100)}%"></i></span>
+        <span class="pc">${p.done}/${p.total}</span></div>
+      ${p.tasks.map(t=>`<div class="task ${t.done?'d':''}">
+        <span class="box ${t.done?'done':''}"></span>
+        <span class="tn">${t.name}</span>
+        ${t.when?`<span class="when">${t.when}</span>`:''}
+        ${t.pri?`<span class="pri ${t.pri==='1순위'?'p1':''}">${t.pri}</span>`:''}
+      </div>`).join('')}
+    </div>`).join('');
+}else{
+  $('#prjn').textContent="0 ACTIVE";
+  $('#projects').innerHTML='<div class="empty">활성 프로젝트가 없습니다 · 노션 Projects에서 "활성" 체크박스를 켜면 그 프로젝트의 태스크가 여기 표시됩니다</div>';
+}
+
+// 태스크 현황 (활성 기준)
+const st=D.taskStat, ssum=(st.done+st.doing+st.todo)||1;
+$('#statn').textContent=(st.done+st.doing+st.todo)+" TASKS";
+$('#status').innerHTML = (st.done+st.doing+st.todo)===0
+  ? '<div class="empty">활성 프로젝트를 켜면 그 태스크들의 완료/진행/할일 분포가 표시됩니다</div>'
+  : `<div class="stat">
+       <i class="done" style="width:${st.done/ssum*100}%"></i>
+       <i class="doing" style="width:${st.doing/ssum*100}%"></i>
+       <i class="todo" style="width:${st.todo/ssum*100}%"></i></div>
+     <div class="statleg">
+       <span><span class="sw" style="background:var(--cream)"></span>완료 <b>${st.done}</b></span>
+       <span><span class="sw" style="background:var(--orange)"></span>진행 <b>${st.doing}</b></span>
+       <span><span class="sw" style="background:var(--cream-16)"></span>할일 <b>${st.todo}</b></span></div>`;
+
+// 미리알림
+$('#reminders').innerHTML = D.reminders.length
+  ? D.reminders.map(r=>`<div class="rem ${r.done?'d':''}">
+      <span class="box ${r.done?'done':''}"></span><span class="rn">${r.title}</span>
+      ${r.due?`<span class="rd">${r.due}</span>`:''}</div>`).join('')
+  : '<div class="empty">미리알림 동기화 대기 · 맥 잡이 osascript로 읽어옵니다</div>';
+
+// 하루 회고
+const R=D.retro; let rh='';
+if(R.oneLine){rh+=`<div class="retro-line"><div class="rl">한줄 회고</div><div class="rv">${R.oneLine}</div></div>`;}
+if(R.improve){rh+=`<div class="retro-line"><div class="rl">내일 개선점</div><div class="rv">${R.improve}</div></div>`;}
+if(R.morningMood||R.eveningMood){rh+=`<div class="moods">
+  <div class="m"><div class="rl mono">아침 기분</div><b>${R.morningMood||'—'}</b></div>
+  <div class="m"><div class="rl mono">저녁 기분</div><b>${R.eveningMood||'—'}</b></div></div>`;}
+if(!R.oneLine&&!R.improve){rh+='<div class="empty" style="margin-bottom:10px">저녁 회고(22:00)가 한줄회고·개선점·기분을 채웁니다</div>';}
+rh+=(R.checks&&R.checks.length)? R.checks.map(c=>`<div class="chk">
+    <div class="ct"><span class="badge">${c.state}</span><span class="cs">${c.time||''} · 기분 ${c.mood}/5 · 몰입 ${c.focus}/5</span></div>
+    <div class="cm">"${c.memo}"</div></div>`).join('')
+  : '<div class="empty">2시간 집중 체크 응답이 여기 쌓입니다</div>';
+$('#retro').innerHTML=rh;
+
+// 습관
+const days=['월','화','수','목','금','토','일'], H=D.habits;
+let hh='<div class="habit"><div></div>'+days.map(d=>`<div class="hd">${d}</div>`).join('')+'<div class="hd">연속</div>';
+H.names.forEach((n,i)=>{
+  hh+=`<div class="hn">${n}</div>`+days.map((_,di)=>{
+    const on=H.week.length&&H.week[i]&&H.week[i][di]; return `<div class="cell ${on?'on':''}"></div>`;
+  }).join('');
+  const s=H.streaks[i]||0; hh+=`<div class="stk ${s>=3?'hot':''}">${s?s+'일':'—'}</div>`;
+});
+hh+='</div>';
+$('#habit').innerHTML=hh+(H.week.length?'':'<div class="empty" style="margin-top:12px">습관 트래커 기록이 쌓이면 크림색으로 채워집니다 · 오늘 시작</div>');
+</script>
+</body>
+</html>
