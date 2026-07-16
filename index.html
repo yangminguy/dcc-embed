@@ -138,7 +138,7 @@
 <!-- ▼▼▼ 로컬 생성기(render_dashboard.py)가 이 블록만 매 실행 시 교체 ▼▼▼ -->
 <script>
 const DATA = {
- "generatedAt": "2026-07-16 16:55 KST",
+ "generatedAt": "2026-07-16 17:04 KST",
  "dateLabel": "2026 / 07 / 16 · THU",
  "level": {
   "xp": 29
@@ -153,95 +153,25 @@ const DATA = {
    "name": "비즈니스 OS",
    "done": 5,
    "total": 5,
-   "tasks": [
-    {
-     "name": "에이전트 OS 기획",
-     "done": true,
-     "pri": "",
-     "when": ""
-    },
-    {
-     "name": "에이전트 os mvp 구현",
-     "done": true,
-     "pri": "",
-     "when": ""
-    },
-    {
-     "name": "비지니스 OS CTO + ACR(agent control room)",
-     "done": true,
-     "pri": "",
-     "when": ""
-    },
-    {
-     "name": "실제 테스트하면서 필요한 것들",
-     "done": true,
-     "pri": "",
-     "when": ""
-    },
-    {
-     "name": "QA 기능 개발",
-     "done": true,
-     "pri": "",
-     "when": ""
-    }
-   ]
+   "tasks": []
   },
   {
    "name": "마케팅 자동화 사업화",
    "done": 3,
    "total": 3,
-   "tasks": [
-    {
-     "name": "비즈니스 인터뷰 추적",
-     "done": true,
-     "pri": "",
-     "when": ""
-    },
-    {
-     "name": "시장성 검토",
-     "done": true,
-     "pri": "",
-     "when": ""
-    },
-    {
-     "name": "경쟁사 분석 및 벤치 마킹",
-     "done": true,
-     "pri": "",
-     "when": ""
-    }
-   ]
+   "tasks": []
   },
   {
    "name": "영상 자동화",
    "done": 2,
    "total": 2,
-   "tasks": [
-    {
-     "name": "영상 숏츠 제작",
-     "done": true,
-     "pri": "",
-     "when": ""
-    },
-    {
-     "name": "영상 편집기 업그레이드",
-     "done": true,
-     "pri": "",
-     "when": ""
-    }
-   ]
+   "tasks": []
   },
   {
    "name": "세컨브레인",
    "done": 1,
    "total": 1,
-   "tasks": [
-    {
-     "name": "세컨 브레인 활용법 - 비즈니스 pt 트레이너",
-     "done": true,
-     "pri": "",
-     "when": ""
-    }
-   ]
+   "tasks": []
   },
   {
    "name": "TODO관리",
@@ -261,7 +191,33 @@ const DATA = {
   "doing": 0,
   "todo": 0
  },
- "reminders": [],
+ "reminders": [
+  {
+   "title": "코스피 1만 투자지도 책 30페이지",
+   "due": "내일",
+   "done": false
+  },
+  {
+   "title": "마케팅 설계자 30페이지",
+   "due": "내일",
+   "done": false
+  },
+  {
+   "title": "성경 읽기 2페이지",
+   "due": "내일",
+   "done": false
+  },
+  {
+   "title": "마케팅 설계자 30page 정독",
+   "due": "오늘",
+   "done": false
+  },
+  {
+   "title": "마케팅 설계자 기반 내 마케팅 상품 정리해보기",
+   "due": "오늘",
+   "done": false
+  }
+ ],
  "retro": {
   "oneLine": null,
   "improve": null,
@@ -421,7 +377,7 @@ if(D.activeProjects.length){
         <span class="tn">${t.name}</span>
         ${t.when?`<span class="when">${t.when}</span>`:''}
         ${t.pri?`<span class="pri ${t.pri==='1순위'?'p1':''}">${t.pri}</span>`:''}
-      </div>`).join('') : '<div class="task"><span class="tn" style="color:var(--cream-40)">등록된 태스크 없음</span></div>'}
+      </div>`).join('') : `<div class="task"><span class="tn" style="color:var(--cream-40)">${p.total===0?'등록된 태스크 없음':(p.done>=p.total?'전체 완료 · 남은 태스크 없음':'남은 태스크 없음')}</span></div>`}
     </div>`).join('');
 }else{
   $('#prjn').textContent="0 ACTIVE";
