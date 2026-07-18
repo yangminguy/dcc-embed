@@ -39,7 +39,7 @@
   .mark{width:52px;height:52px;color:var(--cream)}
 
   /* ---- hero: level + focus + 달성률 ---- */
-  .hero{display:grid;grid-template-columns:1.7fr 1fr 1fr;border-left:var(--hair) solid var(--cream-16)}
+  .hero{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;border-left:var(--hair) solid var(--cream-16)}
   .hcell{border-right:var(--hair) solid var(--cream-16);border-bottom:var(--hair) solid var(--cream-16);padding:18px 20px}
   .hcell .lbl{display:flex;justify-content:space-between;align-items:baseline}
   .lvrow{display:flex;align-items:baseline;gap:14px;margin-top:12px}
@@ -138,13 +138,16 @@
 <!-- ▼▼▼ 로컬 생성기(render_dashboard.py)가 이 블록만 매 실행 시 교체 ▼▼▼ -->
 <script>
 const DATA = {
- "generatedAt": "2026-07-16 17:04 KST",
- "dateLabel": "2026 / 07 / 16 · THU",
+ "generatedAt": "2026-07-18 11:07 KST",
+ "dateLabel": "2026 / 07 / 18 · SAT",
  "level": {
-  "xp": 29
+  "xp": 133
+ },
+ "block": {
+  "min": 36.7
  },
  "focus": {
-  "min": 175,
+  "min": 125,
   "goalMin": 240
  },
  "achieve": null,
@@ -194,12 +197,12 @@ const DATA = {
  "reminders": [
   {
    "title": "코스피 1만 투자지도 책 30페이지",
-   "due": "내일",
+   "due": "오늘",
    "done": false
   },
   {
    "title": "마케팅 설계자 30페이지",
-   "due": "내일",
+   "due": "오늘",
    "done": false
   },
   {
@@ -208,12 +211,37 @@ const DATA = {
    "done": false
   },
   {
-   "title": "마케팅 설계자 30page 정독",
+   "title": "CMO 컨텐츠 기획 과정 스킬로 자동화 시도",
    "due": "오늘",
    "done": false
   },
   {
-   "title": "마케팅 설계자 기반 내 마케팅 상품 정리해보기",
+   "title": "🚗 출발 준비 — 6시 비즈니스 PT (5시 출발)",
+   "due": "오늘",
+   "done": false
+  },
+  {
+   "title": "🐸 [개구리] 마케팅 로드맵 + 12주 OKR 재설정 (딥워크 120분)",
+   "due": "오늘",
+   "done": false
+  },
+  {
+   "title": "🛠 투두 관리자 디벨롭 — 파트1 (Claude와 함께)",
+   "due": "오늘",
+   "done": false
+  },
+  {
+   "title": "🛠 투두 관리자 디벨롭 — 파트2 (Claude와 함께, 타임박스 15:30)",
+   "due": "오늘",
+   "done": false
+  },
+  {
+   "title": "📐 마케팅 설계자 → 내 상황 적용 기획 (딥워크 60분)",
+   "due": "오늘",
+   "done": false
+  },
+  {
+   "title": "🧹 종료 의식 — 열린 고리 비우기 + 내일 개구리 1개",
    "due": "오늘",
    "done": false
   }
@@ -223,22 +251,7 @@ const DATA = {
   "improve": null,
   "morningMood": null,
   "eveningMood": null,
-  "checks": [
-   {
-    "state": "막힘",
-    "mood": 4,
-    "focus": 2,
-    "memo": "영상 업로드가 잘 되서 기분은 좋다. 영상 편집 자동화 계획안도 올려서 개발 중에 있고 지금은 투두 점검을 개발하는 중이다. 몰입이 살짝 깨진 감이 있기는 한데 그래도 잘 하고 있다 .",
-    "time": "16:49"
-   },
-   {
-    "state": "순항중",
-    "mood": 5,
-    "focus": 4,
-    "memo": "지금 나는 영상 편집 자동화를 개선하려고 노력하고 있고 영상 을 실제로 만들고 있어 이제 업로드 준비도 해야지",
-    "time": "15:07"
-   }
-  ]
+  "checks": []
  },
  "habits": {
   "names": [
@@ -251,7 +264,80 @@ const DATA = {
    "저녁밥",
    "디톡스"
   ],
-  "week": [],
+  "week": [
+   [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    true,
+    true,
+    false
+   ]
+  ],
   "streaks": [
    0,
    0,
@@ -260,7 +346,7 @@ const DATA = {
    0,
    0,
    0,
-   0
+   2
   ]
  }
 };
@@ -284,10 +370,9 @@ const DATA = {
 
 <div class="hero">
   <div class="hcell">
-    <div class="lbl"><span class="mono" style="color:var(--cream)">레벨</span><span class="mono">LEVEL</span></div>
-    <div class="lvrow"><span class="lvbig tnum" id="lvbig">LV 1</span><span class="xpnow tnum" id="xpnow">0 XP</span></div>
-    <div class="lvbar"><i id="lvbar"></i></div>
-    <div class="lvnext"><span id="lvnextl">다음 레벨까지</span><b class="tnum" id="lvnextr">—</b></div>
+    <div class="lbl"><span class="mono" style="color:var(--cream)">최장 무중단 블록</span><span class="mono">LONGEST BLOCK</span></div>
+    <div class="lvrow"><span class="lvbig tnum" id="blockbig">—</span></div>
+    <div class="sub">무전환 생산 연속 블록 · 스크린타임 실측</div>
   </div>
   <div class="hcell">
     <div class="lbl"><span class="mono" style="color:var(--cream)">오늘 몰입</span><span class="mono">FOCUS</span></div>
@@ -298,6 +383,12 @@ const DATA = {
   <div class="hcell">
     <div class="lbl"><span class="mono" style="color:var(--cream)">달성률</span><span class="mono">DONE</span></div>
     <div id="achieve"></div>
+  </div>
+  <div class="hcell">
+    <div class="lbl"><span class="mono" style="color:var(--cream)">레벨</span><span class="mono">LEVEL</span></div>
+    <div class="lvrow"><span class="lvbig tnum" id="lvbig">LV 1</span><span class="xpnow tnum" id="xpnow">0 XP</span></div>
+    <div class="lvbar"><i id="lvbar"></i></div>
+    <div class="lvnext"><span id="lvnextl">다음 레벨까지</span><b class="tnum" id="lvnextr">—</b></div>
   </div>
 </div>
 
@@ -352,6 +443,10 @@ $('#lvbig').textContent="LV "+li.l;
 $('#xpnow').textContent=(D.level.xp||0)+" XP";
 $('#lvbar').style.width=Math.round(li.into/li.span*100)+"%";
 $('#lvnextr').textContent="+"+li.remain+" XP · 몰입 "+(li.remain/10).toFixed(1)+"h";
+
+// 최장 무중단 블록
+const bm=Math.round((D.block&&D.block.min)||0);
+$('#blockbig').innerHTML = bm>=60 ? hm(bm) : bm+'<small>분</small>';
 
 // 몰입
 $('#focus').innerHTML=hm(D.focus.min);
