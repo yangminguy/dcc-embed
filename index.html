@@ -91,6 +91,14 @@
   .task .when{font-family:var(--f-mono);font-size:9px;letter-spacing:.06em;color:var(--cream-40)}
   .pri{font-family:var(--f-mono);font-size:9px;letter-spacing:.08em;padding:2px 6px;border:var(--hair) solid var(--cream-16);color:var(--cream-64)}
   .pri.p1{border-color:var(--orange);color:var(--orange-bright)}
+  .todaytask{display:grid;grid-template-columns:68px minmax(0,1fr) auto;gap:12px;align-items:center;
+    padding:11px 0;border-bottom:var(--hair) solid var(--cream-08)}
+  .todaytask:last-child{border-bottom:0}
+  .todaytime{font-family:var(--f-mono);font-size:12px;color:var(--orange-bright)}
+  .todayname{font-weight:600}
+  .todayproject{font-family:var(--f-mono);font-size:9px;letter-spacing:.05em;color:var(--cream-40);margin-top:2px}
+  .more{font-family:var(--f-mono);font-size:9px;letter-spacing:.06em;color:var(--cream-40);
+    padding:8px 13px;border-top:var(--hair) solid var(--cream-08)}
 
   .stat{display:flex;height:12px;border:var(--hair) solid var(--cream-16);margin-top:4px}
   .stat i.done{background:var(--cream)}.stat i.doing{background:var(--orange)}.stat i.todo{background:var(--cream-16)}
@@ -144,55 +152,43 @@
 <!-- ▼▼▼ 로컬 생성기(render_dashboard.py)가 이 블록만 매 실행 시 교체 ▼▼▼ -->
 <script>
 const DATA = {
- "generatedAt": "2026-07-18 15:27 KST",
- "dateLabel": "2026 / 07 / 18 · SAT",
+ "generatedAt": "2026-07-22 14:34 KST",
+ "dateLabel": "2026 / 07 / 22 · WED",
  "level": {
-  "xp": 142
+  "xp": 191
  },
  "block": {
-  "min": 36.7
+  "min": 89.4
  },
  "focus": {
-  "min": 180,
+  "min": 197,
   "goalMin": 240
  },
  "achieve": null,
  "activeProjects": [
   {
-   "name": "콘텐츠 자동화 기능 v1",
-   "done": 0,
+   "name": "마케팅 공부 + 컨설팅",
+   "done": 2,
    "total": 3,
    "tasks": [
     {
-     "name": "🐸 콘텐츠 자동화 파이프라인 설계",
+     "name": "마케팅 스킬 찾기",
      "done": false,
-     "pri": "1순위",
-     "when": "8/14"
-    },
-    {
-     "name": "리퍼포징 자동화 구현",
-     "done": false,
-     "pri": "2순위",
-     "when": "8/28"
-    },
-    {
-     "name": "초안→편집 자동화 구현",
-     "done": false,
-     "pri": "2순위",
-     "when": "8/21"
+     "pri": "3순위",
+     "when": "오늘 12:30"
     }
    ]
   },
   {
    "name": "컨설팅 상품 패키지 설계 (진입·밀착)",
    "done": 0,
-   "total": 3,
+   "total": 4,
    "tasks": [
     {
-     "name": "컨설팅 판매 스크립트 작성",
+     "name": "컨설팅 설계 들어가기",
      "done": false,
-     "pri": "3순위",
-     "when": "8/18"
+     "pri": "2순위",
+     "when": "오늘 14:30"
     },
     {
      "name": "🐸 진입·밀착 커리큘럼 설계",
@@ -205,49 +201,56 @@ const DATA = {
      "done": false,
      "pri": "2순위",
      "when": "8/11"
+    },
+    {
+     "name": "컨설팅 판매 스크립트 작성",
+     "done": false,
+     "pri": "3순위",
+     "when": "8/18"
+    }
+   ]
+  },
+  {
+   "name": "성과진단 오퍼 + 리드 퍼널",
+   "done": 0,
+   "total": 4,
+   "tasks": [
+    {
+     "name": "리드 마그넷 페이지 설계",
+     "done": false,
+     "pri": "2순위",
+     "when": "오늘 16:30"
+    },
+    {
+     "name": "🐸 성과진단 템플릿 7요소 설계",
+     "done": false,
+     "pri": "1순위",
+     "when": "7/23"
+    },
+    {
+     "name": "🐸 성과진단 템플릿 v1 완성",
+     "done": false,
+     "pri": "1순위",
+     "when": "7/30"
+    },
+    {
+     "name": "오퍼 페이지 초안 작성",
+     "done": false,
+     "pri": "2순위",
+     "when": "8/1"
     }
    ]
   },
   {
    "name": "유튜브 콘텐츠 조합 1차 (풀링4+키1)",
-   "done": 0,
-   "total": 8,
+   "done": 5,
+   "total": 12,
    "tasks": [
     {
-     "name": "유튜브 2편 촬영·편집",
-     "done": false,
-     "pri": "2순위",
-     "when": "7/31"
-    },
-    {
-     "name": "유튜브 2편 대본 작성",
-     "done": false,
-     "pri": "2순위",
-     "when": "7/28"
-    },
-    {
-     "name": "🐸 유튜브·인스타 발행 (1주차)",
-     "done": false,
-     "pri": "1순위",
-     "when": "7/25"
-    },
-    {
-     "name": "유튜브 촬영 준비·소재 리서치",
-     "done": false,
-     "pri": "3순위",
-     "when": "7/29"
-    },
-    {
-     "name": "🐸 유튜브·인스타 발행 (2주차)",
-     "done": false,
-     "pri": "1순위",
-     "when": "8/1"
-    },
-    {
      "name": "유튜브 1편 대본 작성",
-     "done": false,
+     "done": true,
      "pri": "2순위",
-     "when": "7/22"
+     "when": "오늘"
     },
     {
      "name": "인스타·쓰레드 콘텐츠 제작",
@@ -260,37 +263,49 @@ const DATA = {
      "done": false,
      "pri": "1순위",
      "when": "7/24"
+    },
+    {
+     "name": "🐸 유튜브·인스타 발행 (1주차)",
+     "done": false,
+     "pri": "1순위",
+     "when": "7/25"
+    },
+    {
+     "name": "유튜브 2편 대본 작성",
+     "done": false,
+     "pri": "2순위",
+     "when": "7/28"
+    },
+    {
+     "name": "유튜브 촬영 준비·소재 리서치",
+     "done": false,
+     "pri": "3순위",
+     "when": "7/29"
+    },
+    {
+     "name": "유튜브 2편 촬영·편집",
+     "done": false,
+     "pri": "2순위",
+     "when": "7/31"
+    },
+    {
+     "name": "🐸 유튜브·인스타 발행 (2주차)",
+     "done": false,
+     "pri": "1순위",
+     "when": "8/1"
     }
    ]
   },
   {
    "name": "콘텐츠 이론 v1 문서",
-   "done": 0,
+   "done": 5,
    "total": 8,
    "tasks": [
     {
-     "name": "원고 작성 심화 강의 4개 수강",
-     "done": false,
-     "pri": "2순위",
-     "when": "오늘 06:30"
-    },
-    {
-     "name": "원고 작성법 노션 정리·체계화",
-     "done": false,
-     "pri": "2순위",
-     "when": "오늘 14:00"
-    },
-    {
-     "name": "콘텐츠 3기둥 주제 브레인스토밍",
-     "done": false,
-     "pri": "3순위",
-     "when": "7/21"
-    },
-    {
      "name": "🐸 콘텐츠 이론 챕터1 초안 집필",
-     "done": false,
+     "done": true,
      "pri": "1순위",
-     "when": "7/22"
+     "when": "오늘"
     },
     {
      "name": "콘텐츠 3기둥 주제 리스트 완성",
@@ -299,22 +314,60 @@ const DATA = {
      "when": "7/24"
     },
     {
-     "name": "🐸 콘텐츠 이론 v1 초안 마무리·교정",
-     "done": false,
-     "pri": "1순위",
-     "when": "7/29"
-    },
-    {
-     "name": "🐸 콘텐츠 이론 v1 목차·뼈대 잡기",
-     "done": false,
-     "pri": "1순위",
-     "when": "7/21"
-    },
-    {
      "name": "🐸 콘텐츠 이론 v1 본문 집필",
      "done": false,
      "pri": "1순위",
      "when": "7/28"
+    },
+    {
+     "name": "🐸 콘텐츠 이론 v1 초안 마무리·교정",
+     "done": false,
+     "pri": "1순위",
+     "when": "7/29"
+    }
+   ]
+  },
+  {
+   "name": "미용실 실증 케이스 리포트",
+   "done": 0,
+   "total": 2,
+   "tasks": [
+    {
+     "name": "내 미용실 진단 데이터 수집",
+     "done": false,
+     "pri": "2순위",
+     "when": "7/30"
+    },
+    {
+     "name": "🐸 미용실 첫 성과진단 리포트 작성",
+     "done": false,
+     "pri": "1순위",
+     "when": "7/31"
+    }
+   ]
+  },
+  {
+   "name": "콘텐츠 자동화 기능 v1",
+   "done": 0,
+   "total": 3,
+   "tasks": [
+    {
+     "name": "🐸 콘텐츠 자동화 파이프라인 설계",
+     "done": false,
+     "pri": "1순위",
+     "when": "8/14"
+    },
+    {
+     "name": "초안→편집 자동화 구현",
+     "done": false,
+     "pri": "2순위",
+     "when": "8/21"
+    },
+    {
+     "name": "리퍼포징 자동화 구현",
+     "done": false,
+     "pri": "2순위",
+     "when": "8/28"
     }
    ]
   },
@@ -342,184 +395,122 @@ const DATA = {
      "when": "9/12"
     }
    ]
+  }
+ ],
+ "todayTasks": [
+  {
+   "name": "마케팅 스킬 찾기",
+   "done": false,
+   "pri": "3순위",
+   "when": "오늘 12:30",
+   "project": "마케팅 공부 + 컨설팅"
   },
   {
-   "name": "유튜브 채널 브랜딩 키트",
-   "done": 0,
-   "total": 2,
-   "tasks": [
-    {
-     "name": "채널 컴셉 한 줄 + 소개문 정리",
-     "done": false,
-     "pri": "2순위",
-     "when": "오늘"
-    },
-    {
-     "name": "배너·썰네일 템플릿 만들기",
-     "done": false,
-     "pri": "3순위",
-     "when": "오늘"
-    }
-   ]
+   "name": "컨설팅 설계 들어가기",
+   "done": false,
+   "pri": "2순위",
+   "when": "오늘 14:30",
+   "project": "컨설팅 상품 패키지 설계 (진입·밀착)"
   },
   {
-   "name": "미용실 실증 케이스 리포트",
-   "done": 0,
-   "total": 2,
-   "tasks": [
-    {
-     "name": "🐸 미용실 첫 성과진단 리포트 작성",
-     "done": false,
-     "pri": "1순위",
-     "when": "7/31"
-    },
-    {
-     "name": "내 미용실 진단 데이터 수집",
-     "done": false,
-     "pri": "2순위",
-     "when": "7/30"
-    }
-   ]
+   "name": "리드 마그넷 페이지 설계",
+   "done": false,
+   "pri": "2순위",
+   "when": "오늘 16:30",
+   "project": "성과진단 오퍼 + 리드 퍼널"
   },
   {
-   "name": "성과진단 오퍼 + 리드 퍼널",
-   "done": 0,
-   "total": 3,
-   "tasks": [
-    {
-     "name": "🐸 성과진단 템플릿 7요소 설계",
-     "done": false,
-     "pri": "1순위",
-     "when": "7/23"
-    },
-    {
-     "name": "🐸 성과진단 템플릿 v1 완성",
-     "done": false,
-     "pri": "1순위",
-     "when": "7/30"
-    },
-    {
-     "name": "오퍼 페이지 초안 작성",
-     "done": false,
-     "pri": "2순위",
-     "when": "8/1"
-    }
-   ]
+   "name": "유튜브 1편 대본 작성",
+   "done": true,
+   "pri": "2순위",
+   "when": "오늘",
+   "project": "유튜브 콘텐츠 조합 1차 (풀링4+키1)"
   },
   {
-   "name": "마케팅 공부 + 컨설팅",
-   "done": 0,
-   "total": 0,
-   "tasks": []
-  },
-  {
-   "name": "TODO관리",
-   "done": 0,
-   "total": 1,
-   "tasks": [
-    {
-     "name": "투두 관리자 개발",
-     "done": false,
-     "pri": "3순위",
-     "when": "오늘 06:30"
-    }
-   ]
-  },
-  {
-   "name": "세컨브레인",
-   "done": 1,
-   "total": 1,
-   "tasks": []
-  },
-  {
-   "name": "영상 자동화",
-   "done": 2,
-   "total": 4,
-   "tasks": [
-    {
-     "name": "유튜브 영상 제작 부분 개발",
-     "done": false,
-     "pri": "3순위",
-     "when": "오늘 11:00"
-    },
-    {
-     "name": "유튜브 원고 조사 방법 개발",
-     "done": false,
-     "pri": "3순위",
-     "when": "오늘 12:00"
-    }
-   ]
-  },
-  {
-   "name": "마케팅 자동화 사업화",
-   "done": 3,
-   "total": 3,
-   "tasks": []
-  },
-  {
-   "name": "비즈니스 OS ",
-   "done": 5,
-   "total": 5,
-   "tasks": []
+   "name": "🐸 콘텐츠 이론 챕터1 초안 집필",
+   "done": true,
+   "pri": "1순위",
+   "when": "오늘",
+   "project": "콘텐츠 이론 v1 문서"
   }
  ],
  "taskStat": {
-  "done": 11,
+  "done": 28,
   "doing": 0,
-  "todo": 35
+  "todo": 27
  },
  "reminders": [
   {
-   "title": "마케팅 설계자 30페이지",
-   "due": "7/18",
+   "title": "비즈니스 PT 썸끝·원끝",
+   "due": "오늘",
    "done": false,
-   "due_dt": "2028-07-18T07:30",
-   "due_time": "07:30"
+   "due_dt": "2026-07-22T10:00",
+   "due_time": "10:00",
+   "display_due": "오늘 10:00"
+  },
+  {
+   "title": "비즈니스 PT 썸끝",
+   "due": "오늘",
+   "done": false,
+   "due_dt": "2026-07-22T10:00",
+   "due_time": "10:00",
+   "display_due": "오늘 10:00"
+  },
+  {
+   "title": "비즈니스 PT 원끝",
+   "due": "오늘",
+   "done": false,
+   "due_dt": "2026-07-22T10:30",
+   "due_time": "10:30",
+   "display_due": "오늘 10:30"
+  },
+  {
+   "title": "루프·하네스 엔지니어링 공부",
+   "due": "오늘",
+   "done": false,
+   "due_dt": "2026-07-22T11:00",
+   "due_time": "11:00",
+   "display_due": "오늘 11:00"
+  },
+  {
+   "title": "마케팅 스킬 찾기",
+   "due": "오늘",
+   "done": false,
+   "due_dt": "2026-07-22T12:30",
+   "due_time": "12:30",
+   "display_due": "오늘 12:30"
+  },
+  {
+   "title": "컨설팅 설계 들어가기",
+   "due": "오늘",
+   "done": false,
+   "due_dt": "2026-07-22T14:30",
+   "due_time": "14:30",
+   "display_due": "오늘 14:30"
+  },
+  {
+   "title": "리드 마그넷 페이지 설계",
+   "due": "오늘",
+   "done": false,
+   "due_dt": "2026-07-22T16:30",
+   "due_time": "16:30",
+   "display_due": "오늘 16:30"
   },
   {
    "title": "성경 읽기 2페이지",
    "due": "내일",
    "done": false,
-   "due_dt": "2026-07-19T06:30",
-   "due_time": "06:30"
+   "due_dt": "2026-07-23T06:30",
+   "due_time": "06:30",
+   "display_due": "내일 06:30"
   },
   {
-   "title": "배너·썰네일 템플릿 만들기",
-   "due": "오늘",
-   "done": false
-  },
-  {
-   "title": "조수 클로드 개발",
-   "due": "오늘",
+   "title": "마케팅 설계자 30페이지",
+   "due": "2028/7/22",
    "done": false,
-   "due_dt": "2026-07-18T07:45",
-   "due_time": "07:45"
-  },
-  {
-   "title": "코스피 1만 투자지도 책 30페이지",
-   "due": "오늘",
-   "done": false,
-   "due_dt": "2026-07-18T09:00",
-   "due_time": "09:00"
-  },
-  {
-   "title": "유튜브 원고 조사 방법 개발",
-   "due": "오늘",
-   "done": false,
-   "due_dt": "2026-07-18T12:00",
-   "due_time": "12:00"
-  },
-  {
-   "title": "채널 컴셉 한 줄 + 소개문 정리",
-   "due": "오늘",
-   "done": false,
-   "due_dt": "2026-07-18T15:00",
-   "due_time": "15:00"
-  },
-  {
-   "title": "새로운 미리 알림",
-   "due": "오늘",
-   "done": false
+   "due_dt": "2028-07-22T07:30",
+   "due_time": "07:30",
+   "display_due": "2028/7/22 07:30"
   }
  ],
  "retro": {
@@ -527,22 +518,7 @@ const DATA = {
   "improve": null,
   "morningMood": null,
   "eveningMood": null,
-  "checks": [
-   {
-    "state": "순항중",
-    "mood": 5,
-    "focus": 4,
-    "memo": "지금 유투브의 원고를 직접 작성해보면서 원고 작성 방법을 정리하고 이걸 어떻게 최적화할 수 있을까 개발을 기획하고 있어 다양한 유투브를 분석 중이야",
-    "time": "14:07"
-   },
-   {
-    "state": "순항중",
-    "mood": 4,
-    "focus": 4,
-    "memo": "지금 강의도 4강 시작 했고 투두 관리자는 개발을 다해서 QA 중이야 작업을 시작하지 않은게 아니라 아직 완료를 못했을 뿐이야 완료하는데 까지 시간이 좀 걸리더라고 순항 중이야 지금",
-    "time": "12:04"
-   }
-  ]
+  "checks": []
  },
  "habits": {
   "names": [
@@ -561,71 +537,71 @@ const DATA = {
     false,
     false,
     false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
     true,
     false,
-    false
-   ],
-   [
     false,
     false,
-    false,
-    false,
-    true,
-    false,
-    false
-   ],
-   [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-   ],
-   [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-   ],
-   [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-   ],
-   [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-   ],
-   [
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-   ],
-   [
-    false,
-    false,
-    false,
-    false,
-    true,
-    true,
     false
    ]
   ],
@@ -637,15 +613,15 @@ const DATA = {
    0,
    0,
    0,
-   2
+   1
   ]
  },
  "sources": {
   "notion": {
-   "updatedAt": "2026-07-18T15:27:38+09:00"
+   "updatedAt": "2026-07-22T14:34:00+09:00"
   },
   "reminders": {
-   "updatedAt": "2026-07-18T15:27:38+09:00"
+   "updatedAt": "2026-07-22T14:34:00+09:00"
   }
  }
 };
@@ -668,6 +644,11 @@ const DATA = {
 </header>
 
 <main>
+<section>
+  <div class="sh"><h2 class="t">오늘 시간표</h2><span class="n" id="todayn">TODAY</span></div>
+  <div class="body" id="todaytasks"></div>
+</section>
+
 <div class="hero">
   <div class="hcell">
     <div class="lbl"><span class="mono" style="color:var(--cream)">최장 무중단 블록</span><span class="mono">LONGEST BLOCK</span></div>
@@ -708,7 +689,7 @@ const DATA = {
     <div class="body" id="reminders"></div>
   </section>
   <section>
-    <div class="sh"><h2 class="t">하루 회고</h2><span class="n">DAILY RETRO</span></div>
+    <div class="sh"><h2 class="t">회고 · 집중 체크</h2><span class="n">RETRO · CHECK-IN</span></div>
     <div class="body" id="retro"></div>
   </section>
 </div>
@@ -765,20 +746,35 @@ $('#achieve').innerHTML = ach==null
      <div class="track"><i class="o" style="width:${ach}%"></i></div>`;
 
 // 활성 프로젝트
+const today=D.todayTasks||[];
+$('#todayn').textContent=today.length+" TODAY";
+$('#todaytasks').innerHTML=today.length
+  ? today.map(t=>{
+      const bits=String(t.when||'').split(' ');
+      const time=bits.length>1?bits[1]:'시각 미지정';
+      return `<div class="todaytask ${t.done?'d':''}">
+        <span class="todaytime">${esc(time)}</span>
+        <span><div class="todayname">${esc(t.name)}</div><div class="todayproject">${esc(t.project)}</div></span>
+        ${t.pri?`<span class="pri ${t.pri==='1순위'?'p1':''}">${esc(t.pri)}</span>`:''}
+      </div>`}).join('')
+  : '<div class="empty">오늘 예정 태스크가 없습니다 · 코워크에서 가용시간과 장소를 알려 시간표를 만드세요</div>';
+
 if(D.activeProjects.length){
-  $('#prjn').textContent=D.activeProjects.length+" ACTIVE";
-  $('#projects').innerHTML=D.activeProjects.map(p=>`
+  const shownProjects=D.activeProjects.slice(0,5);
+  $('#prjn').textContent=shownProjects.length+"/"+D.activeProjects.length+" ACTIVE";
+  $('#projects').innerHTML=shownProjects.map(p=>`
     <div class="prj">
       <div class="prjh"><span class="pn">${esc(p.name)}</span>
         <span class="prjbar" aria-hidden="true"><i style="width:${p.total?Math.round(p.done/p.total*100):0}%"></i></span>
         <span class="pc">${esc(p.done)}/${esc(p.total)}</span></div>
-      ${p.tasks.length? p.tasks.map(t=>`<div class="task ${t.done?'d':''}">
+      ${p.tasks.length? p.tasks.slice(0,3).map(t=>`<div class="task ${t.done?'d':''}">
         <span class="box ${t.done?'done':''}" aria-hidden="true"></span>
         <span class="tn">${esc(t.name)}</span>
         ${t.when?`<span class="when">${esc(t.when)}</span>`:''}
         ${t.pri?`<span class="pri ${t.pri==='1순위'?'p1':''}">${esc(t.pri)}</span>`:''}
-      </div>`).join('') : `<div class="task"><span class="tn" style="color:var(--cream-40)">${p.total===0?'등록된 태스크 없음':(p.done>=p.total?'전체 완료 · 남은 태스크 없음':'남은 태스크 없음')}</span></div>`}
-    </div>`).join('');
+      </div>`).join('')+(p.tasks.length>3?`<div class="more">가까운 3개 표시 · 나머지 ${p.tasks.length-3}개</div>`:'') : ''}
+    </div>`).join('')+(D.activeProjects.length>5
+      ? `<div class="more">오늘·가까운 일정 중심 5개 표시 · 나머지 ${D.activeProjects.length-5}개는 노션에서 확인</div>`:'');
 }else{
   $('#prjn').textContent="0 ACTIVE";
   $('#projects').innerHTML='<div class="empty">활성 프로젝트가 없습니다 · 노션 Projects에서 "활성" 체크박스를 켜면 그 프로젝트의 태스크가 여기 표시됩니다</div>';
@@ -803,7 +799,7 @@ $('#status').innerHTML = (st.done+st.doing+st.todo)===0
 $('#reminders').innerHTML = D.reminders.length
   ? D.reminders.map(r=>`<div class="rem ${r.done?'d':''}">
       <span class="box ${r.done?'done':''}" aria-hidden="true"></span><span class="rn">${esc(r.title)}</span>
-      ${r.due?`<span class="rd">${esc(r.due)}</span>`:''}</div>`).join('')
+      ${r.display_due?`<span class="rd">${esc(r.display_due)}</span>`:''}</div>`).join('')
   : '<div class="empty">미리알림 동기화 대기 · 맥 잡이 osascript로 읽어옵니다</div>';
 
 // 하루 회고
@@ -816,7 +812,7 @@ if(R.morningMood||R.eveningMood){rh+=`<div class="moods">
 if(!R.oneLine&&!R.improve){rh+='<div class="empty" style="margin-bottom:10px">저녁 회고(22:00)가 한줄회고·개선점·기분을 채웁니다</div>';}
 rh+=(R.checks&&R.checks.length)? R.checks.map(c=>`<div class="chk">
     <div class="ct"><span class="badge">${esc(c.state)}</span><span class="cs">${esc(c.time||'')} · 기분 ${esc(c.mood)}/5 · 몰입 ${esc(c.focus)}/5</span></div>
-    <div class="cm">"${esc(c.memo)}"</div></div>`).join('')
+    <div class="cm">${esc(c.memo)}</div></div>`).join('')
   : '<div class="empty">2시간 집중 체크 응답이 여기 쌓입니다</div>';
 $('#retro').innerHTML=rh;
 
